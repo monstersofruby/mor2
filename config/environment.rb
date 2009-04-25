@@ -8,6 +8,7 @@ Rails::Initializer.run do |config|
   config.gem "webrat", :lib => false, :version => "0.4.4"
   config.gem "selenium-client", :lib => false, :version => "1.2.14"
   config.gem "bmabey-database_cleaner", :lib => false, :version => "0.1.2", :source => "http://gems.github.com/"
+  config.gem "nokogiri", :lib => false, :version => "1.2.3"
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
