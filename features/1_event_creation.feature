@@ -58,3 +58,26 @@ Feature: Event creation
     And no event should have been created
     And I should see "Email doesn't exist"
     And I should see "Location not found"
+
+  @advanced
+  Scenario: Preview is shown while I type
+  
+    Given I am on the homepage
+    
+    When I fill in "Your Email" with "dchelimsky@gmail.com"
+    And I fill in "Event name" with "Monsters of Ruby III"
+    And I fill in "Event location" with "Serrano 120, Madrid"
+    And I select "October 22, 2009" as the "Event date 1" date
+    And I click on "add another"
+    And I select "October 29, 2009" as the "Event date 2" date
+    
+    Then I should see preview of the message to be sent with the following content
+    """
+    Hi,
+    christos@me.com has invited you to an event called "Monsters of Ruby III" to take place in "Serrano 120, Madrid" on one of the following dates:
+    - Sat, 24th of October 2009
+    - Sat, 31th of October 2009
+    Please follow this link to select which of the dates you are available, if any:
+    http://example.url
+    """
+    And I should see a map image of "Serrano 120, Madrid"

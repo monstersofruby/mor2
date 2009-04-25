@@ -24,6 +24,6 @@ Feature: Mail preview
     Please follow this link to select which of the dates you are available, if any:
     http://example.url
     """
-    And the preview message should include a Google Maps image of "Serrano 120, Madrid"
+    And I should see a map image of "Serrano 120, Madrid"
     
     
